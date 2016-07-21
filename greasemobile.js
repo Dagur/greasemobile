@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name        Reikna toll
+// @name        Greasemobile
 // @namespace   dagur
-// @description Reikna tollinn á moblie.de
+// @description Reikna tollinn á mobile.de
 // @include     http://suchen.mobile.de/fahrzeuge/details.html*
 // @version     1
 // @grant       GM_xmlhttpRequest
@@ -29,7 +29,7 @@ var priceEUR = function () {
   let priceTxt = document
     .getElementsByClassName("rbt-sec-price")[0]
     .textContent;
-  return priceTxt.match(/^€(\S+).*/)[1].replace(',','');  
+  return priceTxt.match(/^€(\S+).*/)[1].replace(/,/g,'');  
 };
 
 var emission = function () {
@@ -37,7 +37,7 @@ var emission = function () {
     .getElementById("rbt-envkv.emission-v")
     .children[0]
     .textContent;
-  return emissionTxt.match(/^(\d+)\s+g\/km.*$/)[1];  
+  return emissionTxt.match(/(\d+)\s+g\/km.*$/)[1];  
 };
 
 var insertISKPrice = function (total, summaryText, url) {
