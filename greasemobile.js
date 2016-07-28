@@ -3,6 +3,7 @@
 // @namespace   dagur
 // @description Reikna tollinn á mobile.de
 // @include     http://suchen.mobile.de/fahrzeuge/details.html*
+// @include     http://suchen.mobile.de/auto-inserat*
 // @version     1
 // @grant       GM_xmlhttpRequest
 // ==/UserScript==
